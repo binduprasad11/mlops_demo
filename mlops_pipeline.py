@@ -1,22 +1,28 @@
+# mlops_pipeline.py
 import pandas as pd
-import pickle
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score
+import pickle
 
-# Load data
-df = pd.read_csv("data.txt")
-X = df[['weight', 'smooth']]
-y = df['label']
+# Load dataset
+data = pd.read_csv("data.txt")  # Make sure data.txt is in repo
+X = data.iloc[:, :-1]
+y = data.iloc[:, -1]
 
-# Train model
+# Train Logistic Regression model
 model = LogisticRegression()
 model.fit(X, y)
-y_pred = model.predict(X)
 
-# Evaluate
-accuracy = accuracy_score(y, y_pred)
-print(f"Accuracy: {accuracy}")
-
-# Save model
+# Save model to file
 with open("fruit_model.pkl", "wb") as f:
     pickle.dump(model, f)
+
+print("✅ Model trained and saved as fruit_model.pkl")
+
+# Predict on a sample input (e.g. 180g, round=1)
+sample = [[180, 1]]
+prediction = model.predict(sample)[0]
+print(f"🍎 Prediction for {sample}: {prediction}")
+
+# Save prediction to a file
+with open("prediction.txt", "w") as f:
+    f.write(f"Prediction for {sample}: {prediction}")
