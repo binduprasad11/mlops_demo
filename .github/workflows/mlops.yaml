@@ -25,7 +25,7 @@ jobs:
       run: python mlops_pipeline.py
 
     - name: 📤 Upload model
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: fruit-model
         path: fruit_model.pkl
