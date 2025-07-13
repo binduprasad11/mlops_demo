@@ -3,7 +3,7 @@ name: 🤖 Auto ML Retrain
 on:
   push:
     paths:
-      - 'data.csv'
+      - 'data.txt'
       - 'mlops_pipeline.py'
 
 jobs:

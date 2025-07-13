@@ -4,7 +4,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
 
 # Load data
-df = pd.read_csv("data.csv")
+df = pd.read_csv("data.txt")
 X = df[['weight', 'smooth']]
 y = df['label']
 
