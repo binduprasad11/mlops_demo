@@ -1,0 +1,5 @@
+weight,smooth,label
+150,1,apple
+140,0,orange
+160,1,apple
+170,0,orange
