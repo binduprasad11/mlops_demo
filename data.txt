@@ -3,3 +3,4 @@ weight,smooth,label
 140,0,orange
 160,1,apple
 170,0,orange
+180,0,orange
